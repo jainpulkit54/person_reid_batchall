@@ -32,10 +32,20 @@ Moreover the training logs can be visualized by following instructions as:<br>
 ### Performance Evaluation
 The performance evaluation code is taken from <a href = "https://github.com/VisualComputingInstitute/triplet-reid">this repository</a>.<br>
 The results are summarized in the table below:<br>
+
+Batch All with Hard Margin:
 |mAP|top-1|top-2|top-5|top-10|
 |---|-----|-----|-----|------|
-|8.70%|20.34%|28.50%|40.53%|51.28%|
+|30.89%|52.61%|63.06%|75.86%|83.94%|
+
+Batch All with Softplus:
+|mAP|top-1|top-2|top-5|top-10|
+|---|-----|-----|-----|------|
+|31.50%|49.11%|60.66%|74.58%|83.31%|
 
 ### Weights
-The weights obtained using this repository can be downloaded using the following link:<br>
-https://drive.google.com/file/d/1Fd9RYd-0B-PbmZueWtaGnYE7CkTb8CY1/view?usp=sharing
+The weights obtained using this repository can be downloaded using the following links:<br>
+<b>Batch All with Hard Margin:</b><br>
+https://drive.google.com/file/d/1ct86ToFBhcRbYQI9e-XFOzgjEJ_QmYgt/view?usp=sharing
+<b>Batch All with Softplus:</b><br>
+https://drive.google.com/file/d/15sopJZNrzWaVs_RnBqdDnYeMKK7ju6Cz/view?usp=sharing
