@@ -1,12 +1,11 @@
-# person_reid_naive
+# person_reid_batchall
 
-A triplet network takes in three images as input i.e., an anchor image, a positive image (i.e., image having label same as the anchor) and a negative image (i.e., image having label different from the anchor). The objective here is to learn embeddings such that the positive images are closer to the anchor as compared to the negative images. The same can be pictorically represented using the image given below:<br>
-<img src = "images/anchor_negative_positive.png"></img>
+A triplet network takes in three images as input i.e., an anchor image, a positive image (i.e., image having label same as the anchor) and a negative image (i.e., image having label different from the anchor). The objective here is to learn embeddings such that the positive images are closer to the anchor as compared to the negative images. 
 
-Source: <a href = "https://www.cv-foundation.org/openaccess/content_cvpr_2015/app/1A_089.pdf">Schroff, Florian, Dmitry Kalenichenko, and James Philbin. Facenet: A unified embedding for face recognition and clustering. CVPR 2015</a><br>
+The Batch All variant of the triplet loss is mathematically expressed as:<br>
+<img src = "images/batchall_loss.png"></img>
 
-Moreover, the triplet loss is mathematically expressed as:<br>
-<img src = "images/triplet_loss.png"></img>
+Source: <a href = "https://arxiv.org/abs/1703.07737">Alexander Hermans, Lucas Beyer, Bastian Leibe, “In Defense of the Triplet Loss for Person Re-Identification”</a><br>
 
 ### Dataset
 
@@ -20,12 +19,18 @@ The dataset is augmented on the go (during training) by using Random Horizontal 
 ### Tensorboard Visualization
 
 The training logs obtained are as follows:<br>
-<img src = "images/logs_naive_triplet_loss.png"></img>
+<b>Batch All with Hard Margin:</b><br>
+<img src = "images/logs_batchall_hardmargin.png"></img>
+<b>Batch All with Soft Margin:</b><br>
+<img src = "images/logs_batchall_softplus.png"></img>
 
 Moreover the training logs can be visualized by following instructions as:<br>
 1) Go to the source directory.<br>
 2) Type the command:<br>
-<code>$ tensorboard --logdir logs_market1501_naive</code><br>
+For Batch All with Hard Margin:<br>
+<code>$ tensorboard --logdir logs_market1501_batchall</code><br>
+For Batch All with Soft Margin:<br>
+<code>$ tensorboard --logdir logs_market1501_batchall_softplus</code><br>
 3) Go to a browser and type:<br>
 <code>http://localhost:6006/</code>
 
